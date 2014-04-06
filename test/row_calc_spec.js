@@ -9,6 +9,10 @@ describe('row calculator', function() {
       rowCalc.merge([0, 2]).should.eql([0, 2]);
     });
 
+    it('could merge [2, 0] to [0, 2]', function() {
+      rowCalc.merge([2, 0]).should.eql([0, 2]);
+    });
+
     it('could merge [2, 2] to [0, 4]', function() {
       rowCalc.merge([2, 2]).should.eql([0, 4]);
     });
@@ -19,6 +23,10 @@ describe('row calculator', function() {
 
     it('could merge [0, 2, 2] to [0, 0, 4]', function() {
       rowCalc.merge([0, 2, 2]).should.eql([0, 0, 4]);
+    });
+
+    it('could merge [2, 0, 2] to [0, 0, 4]', function() {
+      rowCalc.merge([2, 0, 2]).should.eql([0, 0, 4]);
     });
 
     it('could merge [2, 2, 2] to [0, 2, 4]', function() {
@@ -41,8 +49,16 @@ describe('row calculator', function() {
       rowCalc.merge([0, 2], rowCalc.RTL).should.eql([2, 0]);
     });
 
+    it('could merge [0, 2, 2] to [4, 0, 0]', function() {
+      rowCalc.merge([0, 2, 2], rowCalc.RTL).should.eql([4, 0, 0]);
+    });
+
     it('could merge [2, 2, 2, 2] to [4, 4, 0, 0]', function() {
       rowCalc.merge([2, 2, 2, 2], rowCalc.RTL).should.eql([4, 4, 0, 0]);
+    });
+
+    it('could merge [4, 4, 2, 2] to [8, 4, 0, 0]', function() {
+      rowCalc.merge([4, 4, 2, 2], rowCalc.RTL).should.eql([8, 4, 0, 0]);
     });
 
   });
