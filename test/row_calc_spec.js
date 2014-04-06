@@ -30,7 +30,19 @@ describe('row calculator', function() {
     });
 
     it('could merge [2, 4, 2, 4] to [2, 4, 2, 4]', function() {
-      rowCalc.merge([2, 4, 2, 4]).should.eql([2, 4, 2, 4]);
+      rowCalc.merge([2, 4, 2, 4], rowCalc.LTR).should.eql([2, 4, 2, 4]);
+    });
+
+  });
+
+  describe('right to left calculation', function() {
+
+    it('could merge [0, 2] to [2, 0]', function() {
+      rowCalc.merge([0, 2], rowCalc.RTL).should.eql([2, 0]);
+    });
+
+    it('could merge [2, 2, 2, 2] to [4, 4, 0, 0]', function() {
+      rowCalc.merge([2, 2, 2, 2], rowCalc.RTL).should.eql([4, 4, 0, 0]);
     });
 
   });
