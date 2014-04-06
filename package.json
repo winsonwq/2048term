@@ -14,5 +14,8 @@
   "license": "MIT",
   "devDependencies": {
     "chai": "^1.9.1"
+  },
+  "dependencies": {
+    "keypress": "^0.2.1"
   }
 }
