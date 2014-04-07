@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var Game = require('./lib/game');
 var game = new Game(process.stdin, process.stdout);
 game.start();

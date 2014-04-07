@@ -25,6 +25,9 @@
   "devDependencies": {
     "chai": "^1.9.1"
   },
+  "bin": {
+    "t2048": "./index.js"
+  },
   "dependencies": {
     "keypress": "^0.2.1",
     "term-canvas": "0.0.5",
