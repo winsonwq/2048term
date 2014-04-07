@@ -1,6 +1,6 @@
 {
   "name": "2048",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "game 2048 in terminal",
   "main": "index.js",
   "scripts": {
@@ -26,7 +26,7 @@
     "chai": "^1.9.1"
   },
   "bin": {
-    "t2048": "./index.js"
+    "2048": "./index.js"
   },
   "dependencies": {
     "keypress": "^0.2.1",
