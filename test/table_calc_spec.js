@@ -9,7 +9,7 @@ describe('table calculation', function() {
       tableCalc.merge([
           [2, 0],
           [2, 0]
-        ]).should.eql([
+        ]).result.should.eql([
           [0, 2],
           [0, 2]
         ]);
@@ -20,7 +20,7 @@ describe('table calculation', function() {
           [2, 2, 2],
           [2, 0, 2],
           [0, 0, 2]
-        ], tableCalc.LTR).should.eql([
+        ], tableCalc.LTR).result.should.eql([
           [0, 2, 4],
           [0, 0, 4],
           [0, 0, 2]
@@ -35,7 +35,7 @@ describe('table calculation', function() {
       tableCalc.merge([
           [0, 2],
           [0, 2]
-        ], tableCalc.RTL).should.eql([
+        ], tableCalc.RTL).result.should.eql([
           [2, 0],
           [2, 0]
         ]);
@@ -46,7 +46,7 @@ describe('table calculation', function() {
           [2, 2, 2],
           [2, 0, 2],
           [0, 0, 2]
-        ], tableCalc.RTL).should.eql([
+        ], tableCalc.RTL).result.should.eql([
           [4, 2, 0],
           [4, 0, 0],
           [2, 0, 0]
@@ -61,7 +61,7 @@ describe('table calculation', function() {
       tableCalc.merge([
           [2, 2],
           [0, 0]
-        ], tableCalc.TTB).should.eql([
+        ], tableCalc.TTB).result.should.eql([
           [0, 0],
           [2, 2]
         ]);
@@ -72,11 +72,19 @@ describe('table calculation', function() {
           [2, 2, 2],
           [2, 0, 2],
           [0, 0, 2]
-        ], tableCalc.TTB).should.eql([
+        ], tableCalc.TTB).result.should.eql([
           [0, 0, 0],
           [0, 0, 2],
           [4, 2, 4]
         ]);
+    });
+
+    it('should return [[2, 2], [2, 2]] while merging [[2, 2, 2], [2, 0, 2], [0, 0, 2]]', function() {
+      tableCalc.merge([
+          [2, 2, 2],
+          [2, 0, 2],
+          [0, 0, 2]
+        ], tableCalc.TTB).mergedNums.should.eql([[4], [], [4]]);
     });
 
   });
@@ -87,7 +95,7 @@ describe('table calculation', function() {
       tableCalc.merge([
           [0, 0],
           [2, 2]
-        ], tableCalc.BTT).should.eql([
+        ], tableCalc.BTT).result.should.eql([
           [2, 2],
           [0, 0]
         ]);
@@ -98,7 +106,7 @@ describe('table calculation', function() {
           [2, 2, 2],
           [2, 0, 2],
           [0, 0, 2]
-        ], tableCalc.BTT).should.eql([
+        ], tableCalc.BTT).result.should.eql([
           [4, 2, 4],
           [0, 0, 2],
           [0, 0, 0]
