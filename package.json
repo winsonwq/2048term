@@ -1,16 +1,26 @@
 {
-  "name": "2048-term",
+  "name": "2048",
   "version": "0.0.1",
   "description": "game 2048 in terminal",
   "main": "index.js",
   "scripts": {
     "test": "mocha test"
   },
+  "author": {
+    "name": "Wang Qiu",
+    "email": "winsonwq@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:winsonwq/2048term.git"
+  },
+  "bugs": {
+    "url": "https://github.com/windonwq/2048term/issues"
+  },
   "keywords": [
     "game",
     "2048"
   ],
-  "author": "Wang Qiu",
   "license": "MIT",
   "devDependencies": {
     "chai": "^1.9.1"
