@@ -1,5 +1,11 @@
 2048 in Terminal
 -----------------
 ```
-npm install -g t2048
+npm install -g 2048
+```
+
+then run
+
+```
+$ t2048
 ```
