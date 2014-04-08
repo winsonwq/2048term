@@ -115,4 +115,76 @@ describe('table calculation', function() {
 
   });
 
+  describe('table is same right to left calculation', function() {
+
+    it('should be the same', function() {
+      var table = [[4, 2], [0, 0]],
+        new_table = tableCalc.merge(table, tableCalc.RTL);
+
+      tableCalc.isSame(table, new_table.result).should.eql(true);
+    });
+
+    it('should not be the same', function() {
+      var table = [[2, 2], [4, 4]],
+        new_table = tableCalc.merge(table, tableCalc.RTL);
+
+      tableCalc.isSame(table, new_table.result).should.eql(false);
+    });
+
+  });
+
+  describe('table is same left to right calculation', function() {
+
+    it('should be the same', function() {
+      var table = [[4, 2], [0, 0]],
+        new_table = tableCalc.merge(table, tableCalc.LTR);
+
+      tableCalc.isSame(table, new_table.result).should.eql(true);
+    });
+
+    it('should not be the same', function() {
+      var table = [[2, 2], [4, 4]],
+        new_table = tableCalc.merge(table, tableCalc.LTR);
+
+      tableCalc.isSame(table, new_table.result).should.eql(false);
+    });
+
+  });
+
+  describe('table is same top to bottom calculation', function() {
+
+    it('should be the same', function() {
+      var table = [[4, 0], [2, 0]],
+        new_table = tableCalc.merge(table, tableCalc.TTB);
+
+      tableCalc.isSame(table, new_table.result).should.eql(true);
+    });
+
+    it('should not be the same', function() {
+      var table = [[2, 4], [2, 4]],
+        new_table = tableCalc.merge(table, tableCalc.TTB);
+
+      tableCalc.isSame(table, new_table.result).should.eql(false);
+    });
+
+  });
+
+  describe('table is same bottom to top calculation', function() {
+
+    it('should be the same', function() {
+      var table = [[4, 0], [2, 0]],
+        new_table = tableCalc.merge(table, tableCalc.BTT);
+
+      tableCalc.isSame(table, new_table.result).should.eql(true);
+    });
+
+    it('should not be the same', function() {
+      var table = [[2, 4], [2, 4]],
+        new_table = tableCalc.merge(table, tableCalc.BTT);
+
+      tableCalc.isSame(table, new_table.result).should.eql(false);
+    });
+
+  });
+
 });
