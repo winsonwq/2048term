@@ -30,7 +30,6 @@
   },
   "dependencies": {
     "keypress": "^0.2.1",
-    "term-canvas": "0.0.5",
     "cli-table": "^0.3.0",
     "colors": "^0.6.2"
   }
